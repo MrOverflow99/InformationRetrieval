@@ -3,16 +3,6 @@ package com.booleanretrieval.preprocessing;
 import java.util.List;
 import java.util.Set;
 
-/*
- *
- * Rimuove le stop words — parole così comuni da non aggiungere
- * valore semantico alla ricerca.
- *
- * PERCHÉ Set E NON List?
- * La ricerca in un HashSet è O(1) — costante.
- * La ricerca in una List è O(n) — lineare.
- *
- */
 
 public class StopWordFilter implements TextProcessor {
 
