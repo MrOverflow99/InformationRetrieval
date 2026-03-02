@@ -31,7 +31,8 @@ public final class Document {
         this.sentiment = sentiment;
     }
 
-    public int getDocID() {
+    public int getDocId() {
+
         return docId;
     }
 
