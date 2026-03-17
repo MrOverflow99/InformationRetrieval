@@ -4,6 +4,7 @@ import java.util.List;
 
 /*
 *
+*  Questo file è preso dalla versione 2025 del mio progetto
 *  Beh, che dire, buona fortuna.........
 *
 */
