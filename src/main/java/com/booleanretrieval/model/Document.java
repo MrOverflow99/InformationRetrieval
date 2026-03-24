@@ -1,17 +1,16 @@
 package com.booleanretrieval.model;
+import java.io.Serializable;
 
 /*
 *
 *   Primo file del progetto, rispettando il principio
 *   Single Responsibility Principle (SRP)
-*   Rappresenta un documento nella collezione.
-*   Document sa solo com'è fatto un documento, non sa come
-*   indicizzarlo, cercarlo, o visualizzarlo.
 *
 */
 
-public final class Document {
+public final class Document implements Serializable{
 
+    private static final long serialVersionUID = 1L;
     private final int docId;
     private final String filePath;
     private final String content;

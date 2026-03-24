@@ -1,11 +1,13 @@
 package com.booleanretrieval.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Term {
+public final class Term implements Serializable {
 
+    private static final long serialVersionUID = 1L;
     private final String term;
     private int documentFrequency;
     private final List<Posting> postingList;

@@ -3,18 +3,11 @@ package com.booleanretrieval.model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.io.Serializable;
 
-/*
-*
-*    STRUTTURA IN MEMORIA:
-*    "java" -> [Posting(1, [3,15,42]), Posting(5, [7,8]), Posting(12, [1])]
-*             docId=1               docId=5             docId=12
-*             appare in pos 3,15,42 appare in pos 7,8   appare in pos 1
-*
-*/
+public final class Posting implements Comparable<Posting>, Serializable {
 
-public final class Posting implements Comparable<Posting> {
-
+    private static final long serialVersionUID = 1L;
     private final int docId;
     private final List<Integer> positions;
 
@@ -38,14 +31,6 @@ public final class Posting implements Comparable<Posting> {
     public int getFrequency() {
         return positions.size();
     }
-
-    /*
-     * PERCHÉ Comparable<Posting>?
-     * Le posting list DEVONO essere ordinate per docId — è il requisito
-     * fondamentale per fare l'intersezione efficiente (merge-based intersection).
-     * Implementando Comparable diciamo: "l'ordinamento naturale di Posting
-     * è per docId crescente".
-     */
 
     @Override
     public int compareTo(Posting other) {
