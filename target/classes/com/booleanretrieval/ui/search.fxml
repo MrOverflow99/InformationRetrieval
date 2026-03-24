@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.booleanretrieval.ui.SearchController"
+      spacing="0"
+      style="-fx-background-color: #2D2D2D;">
+    <fx:define>
+        <ToggleGroup fx:id="queryTypeGroup"/>
+    </fx:define>
+    <HBox style="-fx-background-color: #3C3C3C; -fx-padding: 12 16 12 16;"
+          alignment="CENTER_LEFT" spacing="12">
+        <Label text="🔍" style="-fx-font-size: 20px;"/>
+        <VBox spacing="1">
+            <Label text="Boolean Retrieval Search Engine"
+                   style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #FFFFFF;"/>
+            <Label fx:id="statusLabel" text="Inizializzazione..."
+                   style="-fx-font-size: 11px; -fx-text-fill: #87A556;"/>
+        </VBox>
+    </HBox>
+    <VBox style="-fx-background-color: #383838; -fx-padding: 12 16 10 16;" spacing="8">
+        <HBox spacing="8" alignment="CENTER_LEFT">
+            <TextField fx:id="queryField"
+                       promptText="Cerca nella collezione IMDB..."
+                       style="-fx-background-color: #2D2D2D; -fx-text-fill: #E8E8E8;
+                              -fx-prompt-text-fill: #777777; -fx-font-size: 13px;
+                              -fx-border-color: #555555; -fx-border-width: 1;
+                              -fx-border-radius: 3; -fx-background-radius: 3;
+                              -fx-padding: 7 10 7 10;"
+                       HBox.hgrow="ALWAYS"/>
+            <Button fx:id="searchButton" text="Cerca" onAction="#onSearch"
+                    style="-fx-background-color: #87A556; -fx-text-fill: #FFFFFF;
+                           -fx-font-weight: bold; -fx-font-size: 13px;
+                           -fx-padding: 7 18 7 18; -fx-border-radius: 3;
+                           -fx-background-radius: 3; -fx-cursor: hand;"/>
+        </HBox>
+        <HBox spacing="6" alignment="CENTER_LEFT">
+            <Label text="Tipo:" style="-fx-text-fill: #AAAAAA; -fx-font-size: 11px; -fx-min-width: 30px;"/>
+            <RadioButton fx:id="rbAnd" text="AND" toggleGroup="$queryTypeGroup" selected="true"
+                         style="-fx-text-fill: #CCCCCC; -fx-font-size: 11px;"/>
+            <RadioButton fx:id="rbOptAnd" text="AND+" toggleGroup="$queryTypeGroup"
+                         style="-fx-text-fill: #CCCCCC; -fx-font-size: 11px;"/>
+            <RadioButton fx:id="rbOr" text="OR" toggleGroup="$queryTypeGroup"
+                         style="-fx-text-fill: #CCCCCC; -fx-font-size: 11px;"/>
+            <RadioButton fx:id="rbPhrase" text="Frase" toggleGroup="$queryTypeGroup"
+                         style="-fx-text-fill: #CCCCCC; -fx-font-size: 11px;"/>
+            <RadioButton fx:id="rbWildcard" text="WildCard" toggleGroup="$queryTypeGroup"
+                         style="-fx-text-fill: #CCCCCC; -fx-font-size: 11px;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <CheckBox fx:id="cbRanking" text="TF-IDF" selected="true"
+                      style="-fx-text-fill: #87A556; -fx-font-size: 11px;"/>
+            <Separator orientation="VERTICAL" style="-fx-background-color: #555555;"/>
+            <Label fx:id="resultsCountLabel" text=""
+                   style="-fx-text-fill: #87A556; -fx-font-size: 11px; -fx-font-weight: bold;"/>
+            <Label fx:id="queryTimeLabel" text=""
+                   style="-fx-text-fill: #777777; -fx-font-size: 11px;"/>
+        </HBox>
+        <HBox fx:id="spellBox" spacing="6" alignment="CENTER_LEFT" visible="false" managed="false">
+            <Label text="Forse cercavi:" style="-fx-text-fill: #AAAAAA; -fx-font-size: 11px;"/>
+            <HBox fx:id="suggestionsBox" spacing="4"/>
+        </HBox>
+    </VBox>
+    <Separator style="-fx-background-color: #87A556; -fx-pref-height: 2px;"/>
+    <ListView fx:id="resultsList" VBox.vgrow="ALWAYS"
+              style="-fx-background-color: #2D2D2D; -fx-border-color: transparent; -fx-padding: 0;"/>
+    <VBox style="-fx-background-color: #333333;
+                 -fx-border-color: #87A556;
+                 -fx-border-width: 1 0 0 0;">
+        <TitledPane fx:id="detailPane"
+                    text="Dettaglio documento"
+                    expanded="false"
+                    style="-fx-text-fill: #87A556;
+                           -fx-background-color: #2A2A2A;
+                           -fx-font-size: 11px;">
+            <ScrollPane prefHeight="350"
+                        fitToWidth="true"
+                        style="-fx-background-color: #2A2A2A;
+                               -fx-background: #2A2A2A;">
+                <Label fx:id="detailArea"
+                       wrapText="true"
+                       style="-fx-background-color: #2A2A2A;
+                              -fx-text-fill: #CCCCCC;
+                              -fx-font-family: 'Monospace';
+                              -fx-font-size: 11px;
+                              -fx-padding: 8;"/>
+            </ScrollPane>
+        </TitledPane>
+    </VBox>
+</VBox>

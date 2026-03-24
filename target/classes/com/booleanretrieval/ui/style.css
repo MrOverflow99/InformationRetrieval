@@ -1,0 +1,104 @@
+.text-area .text {
+    -fx-fill: #CCCCCC;
+}
+
+.text-area .scroll-pane {
+    -fx-background-color: #2A2A2A;
+}
+
+.text-area .scroll-pane .viewport {
+    -fx-background-color: #2A2A2A;
+}
+
+.text-area .scroll-pane .content {
+    -fx-background-color: #2A2A2A;
+}
+
+.text-area {
+    -fx-background-color: #2A2A2A;
+    -fx-text-fill: #CCCCCC;
+    -fx-border-color: transparent;
+}
+
+.text-area .content {
+    -fx-background-color: #2A2A2A;
+    -fx-text-fill: #CCCCCC;
+}
+
+.text-area > .scroll-pane > .viewport > .content {
+    -fx-background-color: #2A2A2A;
+}
+
+.list-view {
+    -fx-background-color: #2D2D2D;
+    -fx-border-color: transparent;
+}
+
+.list-cell {
+    -fx-background-color: #2D2D2D;
+    -fx-text-fill: #DDDDDD;
+    -fx-font-size: 12px;
+    -fx-padding: 6 12 6 12;
+}
+
+.list-cell:odd {
+    -fx-background-color: #323232;
+}
+
+.list-cell:selected {
+    -fx-background-color: #3A4A3A;
+    -fx-text-fill: #87A556;
+}
+
+.list-cell:hover {
+    -fx-background-color: #353535;
+}
+
+.scroll-bar {
+    -fx-background-color: #2D2D2D;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #555555;
+    -fx-background-radius: 3;
+}
+
+.scroll-bar .track {
+    -fx-background-color: #2D2D2D;
+}
+
+.radio-button .radio {
+    -fx-border-color: #777777;
+    -fx-background-color: #2D2D2D;
+}
+
+.radio-button:selected .radio {
+    -fx-border-color: #87A556;
+}
+
+.radio-button:selected .dot {
+    -fx-background-color: #87A556;
+}
+
+.check-box .box {
+    -fx-border-color: #777777;
+    -fx-background-color: #2D2D2D;
+}
+
+.check-box:selected .box {
+    -fx-border-color: #87A556;
+    -fx-background-color: #87A556;
+}
+
+.titled-pane > .title {
+    -fx-background-color: #333333;
+}
+
+.titled-pane > .title > .text {
+    -fx-fill: #87A556;
+}
+
+.titled-pane > .content {
+    -fx-background-color: #2A2A2A;
+    -fx-border-color: transparent;
+}
